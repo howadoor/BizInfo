@@ -1,0 +1,26 @@
+﻿@using BizInfo.Model.Entities
+
+<h2>Štítky</h2>
+@MvcHtmlString.Create(CategoryTools.GetAllCategories());
+
+<h2>Strom kategorií</h2>
+@MvcHtmlString.Create(CategoryTools.GetCategoryTree())
+
+<h2>Štítky podle úrovní</h2>
+<table><tr>
+           @{
+               var ticketsByDepth = CategoryTools.GetCategoriesTickets();
+               foreach (var depthAndTickets in ticketsByDepth)
+               {
+                   <td>
+                       <h3>@depthAndTickets.Key</h3>
+                       @foreach (var ticket in depthAndTickets.Value)
+                       {
+                           @ticket
+                           ;
+                           <br />
+                       }
+                   </td>
+               }
+           }
+       </tr></table>

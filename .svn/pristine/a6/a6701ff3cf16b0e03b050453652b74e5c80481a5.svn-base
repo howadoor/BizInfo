@@ -1,0 +1,20 @@
+﻿<?xml version="1.0"?>
+<configuration>
+	<system.web>
+		<compilation debug="true" targetFramework="4.0">
+			<assemblies>
+				<add assembly="System.Web.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+				<add assembly="System.Data.Entity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=B77A5C561934E089"/>
+			</assemblies>
+		</compilation>
+	</system.web>
+	<system.webServer>
+		<modules runAllManagedModulesForAllRequests="true"/>
+	</system.webServer>
+  <connectionStrings>
+    <add name="BizInfoModelContainer" connectionString="metadata=res://*/Entities.BizInfo.csdl|res://*/Entities.BizInfo.ssdl|res://*/Entities.BizInfo.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=FELIPE\BIZINFO;Initial Catalog=BizInfo;Integrated Security=True;MultipleActiveResultSets=True&quot;" providerName="System.Data.EntityClient" />
+    <add name="BizInfo.Experiment.Properties.Settings.BizInfoConnectionString"
+      connectionString="Data Source=FELIPE\BIZINFO_EX;Initial Catalog=BizInfo;Integrated Security=True"
+      providerName="System.Data.SqlClient" />
+  </connectionStrings>
+</configuration>

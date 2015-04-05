@@ -1,0 +1,30 @@
+﻿@model BizInfo.WebApp.MVC3.Models.Base.BaseInfoModel
+
+<table>
+    <tr><th>Údaj</th><th>Za 60 min</th><th>Za 24 h</th></tr>
+    <tr>
+        <td>Celkový počet hledání</td>
+        <td>@Model.SearchingStatistics.LastHour.TotalCount</td>
+        <td>@Model.SearchingStatistics.LastDay.TotalCount</td>
+    </tr>
+    <tr>
+        <td>Z toho selhalo</td>
+        <td>@Model.SearchingStatistics.LastHour.Failed (@string.Format("{0:0.##}", Model.SearchingStatistics.LastHour.Failed <= 0 ? 0.0 : (double) Model.SearchingStatistics.LastHour.TotalCount/Model.SearchingStatistics.LastHour.Failed*100.0) %)</td>
+        <td>@Model.SearchingStatistics.LastDay.Failed (@string.Format("{0:0.##}", Model.SearchingStatistics.LastDay.Failed <= 0 ? 0.0 : (double) Model.SearchingStatistics.LastDay.TotalCount/Model.SearchingStatistics.LastDay.Failed*100.0) %)</td>
+    </tr>
+    <tr>
+        <td>Celkem nalezeno položek</td>
+        <td>@Model.SearchingStatistics.LastHour.ItemsFound</td>
+        <td>@Model.SearchingStatistics.LastDay.ItemsFound</td>
+    </tr>
+    <tr>
+        <td>Celková doba hledání</td>
+        <td>@Model.SearchingStatistics.LastHour.TotalDuration</td>
+        <td>@Model.SearchingStatistics.LastDay.TotalDuration</td>
+    </tr>
+    <tr>
+        <td>Průměrná doba hledání</td>
+        <td>@Model.SearchingStatistics.LastHour.AverageDuration</td>
+        <td>@Model.SearchingStatistics.LastDay.AverageDuration</td>
+    </tr>
+</table>

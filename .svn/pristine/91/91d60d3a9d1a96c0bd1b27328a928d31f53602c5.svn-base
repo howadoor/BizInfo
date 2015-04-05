@@ -1,0 +1,17 @@
+﻿@model BizInfo.WebApp.MVC3.Models.User.TenantSettingsModel
+
+@{
+    var watches = Model.Watches;
+    if (watches.Length == 0)
+    {
+        <text>Nemáte žádná uložená vyhledávací kritéria</text>
+        return;
+    }
+    <div class="tenant-watches-list">
+        @foreach (var watch in watches)
+        {
+            Html.RenderPartial("WatchView", watch);
+        }
+    </div>
+}
+
