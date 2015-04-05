@@ -1,0 +1,64 @@
+﻿@using BizInfo.App.Services.Logging
+@using BizInfo.WebApp.MVC3.Tools
+@model BizInfo.WebApp.MVC3.Models.Common.PagingModel
+
+@Html.Partial("PaginationView", Model)
+
+<div class="bizinfo-list">
+    @{
+        using (this.LogOperation(string.Format("Creating BizInfo PagingView {0}", Model.KindOfView)))
+        {
+            switch (Model.KindOfView)
+            {
+                case 1:
+                    var list = Model.GetPageItems().ToArray();
+                    var count = list.Length;
+                    <div class="column column-0">
+                        @for (var i = 0; i < count/2; i++)
+                        {
+                            var bizInfo = list[i];
+                            @Html.Partial("BizInfoBriefView", bizInfo)
+                            ;
+                        }
+                    </div>
+                    <div class="column column-1">
+                        @for (var i = count/2; i < count; i++)
+                        {
+                            var bizInfo = list[i];
+                            @Html.Partial("BizInfoBriefView", bizInfo)
+                            ;
+                        }
+                    </div>
+                    break;
+                case 2:
+                    foreach (var bizInfo in Model.GetPageItems())
+                    {
+                        @Html.Partial("BizInfoBriefView", bizInfo)
+                        ;
+                    }
+                    break;
+                default:
+                    foreach (var bizInfo in Model.GetPageItems())
+                    {
+                        @Html.Partial("BizInfoView", bizInfo)
+                        ;
+                    }
+                    break;
+            }
+        }
+    }
+</div>
+
+@Html.Partial("PaginationView", Model)
+
+<br />
+<div style="font-size: 8px; color: Gray">
+    Page command<br/>
+    @SearchingTools.GetPageCommand(Model)<br/>
+    Query<br/>
+    @Model.GetQuery()<br/>
+    Count query<br/>
+    @Model.GetCountQuery()<br/>
+    Where<br/>
+    @SearchingTools.CreateWhereCommand(Model)<br/>
+</div>

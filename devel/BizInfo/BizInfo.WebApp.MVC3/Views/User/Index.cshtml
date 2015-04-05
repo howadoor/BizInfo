@@ -1,0 +1,18 @@
+﻿@model BizInfo.WebApp.MVC3.Models.User.TenantSettingsModel
+
+@{
+    ViewBag.Title = "Uživatelská nastavení";
+}
+
+@if (!Request.IsAuthenticated)
+{
+    <text>Pro zobrazení uživatelských nastavení se musíte @Html.ActionLink("přihlásit", "LogOn", "Account").</text>
+    return;
+}
+<div class="section">
+<h2>Uživatelská nastavení</h2>
+@Html.Partial("TenantSettingsView")
+
+<h2>Hlídané informace</h2>
+@Html.Partial("TenantWatchesView")
+</div>

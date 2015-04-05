@@ -1,0 +1,9 @@
+﻿@if (Request.IsAuthenticated)
+{
+    <text>Uživatel <strong>@User.Identity.Name</strong>
+        [ @Html.ActionLink("Odhlásit", "LogOff", "Account") ]</text>
+}
+else
+{
+    @:[ @Html.ActionLink("Přihlásit", "LogOn", "Account") ]
+}

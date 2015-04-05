@@ -1,0 +1,21 @@
+﻿@model BizInfo.WebApp.MVC3.Models.User.TenantSettingsModel
+
+<div class="user-settings-form">
+    @using (Html.BeginForm("UpdateUserSettings", "User"))
+    {
+        @Html.HiddenFor(m => m.UserId)
+        <table>
+            <tr><th>Jméno</th><td>@Html.DisplayTextFor(m => m.Name)</td></tr>
+            <tr><th>Mail</th><td>@Html.TextBoxFor(m => m.Mail)</td></tr>
+            <tr><th>Nejkratší interval mezi zprávami (minuty)</th><td>@Html.TextBoxFor(m => m.MinimumIntervalOfMailInMinutes) <br/> <small>Nejkratší interval mezi vyhledáváním hlídaných informací v minutách. Vložíte-li nulu, budou se nové informace odesílat okamžitě po jejich uložení do systému.</small></td></tr>
+            <tr><th>Posílat více informací najednou</th><td>@Html.CheckBoxFor(m => m.IsListOfInfoSendingEnabled) <br/> <small>Zaškrtnete-li tuto volbu, budou vám nalezené informace posílány hromadně; pokud ne, bude vám každá zaslána v samostatném mailu.</small></td></tr>
+            <tr><th>Odeslání poslední zprávy</th><td>@Html.DisplayTextFor(m => m.LastMailSentTime)</td></tr>
+        </table>
+        <input type="submit" value="Uložit" />
+        <script>
+            $(function () {
+                $("input:submit", ".user-settings-form").button();
+            });
+        </script>
+    }
+</div>

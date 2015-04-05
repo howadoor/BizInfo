@@ -1,0 +1,94 @@
+﻿@using BizInfo.WebApp.MVC3.Tools
+@model BizInfo.WebApp.MVC3.Models.Base.BaseInfoModel
+         
+<div id="tabs" class="tab-form" style="font-size: 90%;">
+    <ul>
+        <li><a href="#tabs-1">Stav databáze</a></li>
+        <li><a href="#tabs-2">Statistika zdrojů</a></li>
+        <li><a href="#tabs-3">Statistika hledání</a></li>
+        @if (LoggedTenant.CanSeeLastSearches)
+        {
+            <li><a href="#tabs-4">Poslední hledání</a></li>
+        }
+        @if (LoggedTenant.CanSeeSentMessages)
+        {
+        <li><a href="#tabs-5">Odeslané zprávy</a></li>
+        }
+    </ul>
+    <div id="tabs-1">
+        <div id="base-info">
+            Stav databáze se načítá&hellip;
+        </div>
+        <script>
+            function loadBaseInfo() {
+                $('#base-info').load("@VirtualPathUtility.ToAbsolute("~/Base/BaseInfo")");
+            }
+
+            self.setInterval("loadBaseInfo()", 60 * 1000);
+            loadBaseInfo();
+        </script>
+    </div>
+    <div id="tabs-2">
+        <div id="source-statistics">
+            Statistika zdrojů se načítá&hellip;
+        </div>
+        <script>
+            function loadSourceStatistics() {
+                $('#source-statistics').load("@VirtualPathUtility.ToAbsolute("~/Base/SourceStatistics")");
+            }
+
+            self.setInterval("loadSourceStatistics()", 20 * 60 * 1000);
+            loadSourceStatistics();
+        </script>
+    </div>
+    <div id="tabs-3">
+        <div id="searching-statistics">
+            Statistika hledání se načítá&hellip;
+        </div>
+        <script>
+            function loadSearchingStatistics() {
+                $('#searching-statistics').load("@VirtualPathUtility.ToAbsolute("~/Base/SearchingStatistics")");
+            }
+
+            self.setInterval("loadSourceStatistics()", 1 * 60 * 1000);
+            loadSearchingStatistics();
+        </script>
+    </div>
+        @if (LoggedTenant.CanSeeLastSearches)
+        {
+            <div id="tabs-4">
+                <div id="searching-monitor">
+                    Přehled posledních hledání se načítá&hellip;
+                </div>
+                <script>
+                    function loadLastSearches() {
+                        $('#searching-monitor').load("@VirtualPathUtility.ToAbsolute("~/Base/SearchingMonitor")");
+                    }
+
+                    self.setInterval("loadLastSearches()", 1 * 60 * 1000);
+                    loadLastSearches();
+                </script>
+            </div>
+        }
+        @if (LoggedTenant.CanSeeSentMessages)
+        {
+            <div id="tabs-5">
+                <div id="mailing-monitor">
+                    Přehled odeslaných zpráv&hellip;
+                </div>
+                <script>
+                    function loadLastMails() {
+                        $('#mailing-monitor').load("@VirtualPathUtility.ToAbsolute("~/Base/MailingMonitor")");
+                    }
+
+                    self.setInterval("loadLastMails()", 1 * 60 * 1000);
+                    loadLastMails();
+                </script>
+            </div>
+        }
+    <script>
+        $(function() {
+            $("#tabs").tabs();
+        });
+    </script>
+</div>

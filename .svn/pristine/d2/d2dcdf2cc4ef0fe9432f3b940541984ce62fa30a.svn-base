@@ -1,0 +1,5 @@
+﻿@model BizInfo.WebApp.MVC3.Models.Base.BaseInfoModel
+
+@Model.BaseInfo.WebSourcesCount záznamů<br />
+@Model.BaseInfo.WebSourcesCountLastHour informací za hodinu, @Model.BaseInfo.WebSourcesCountLastDay za den<br />
+@Model.BaseInfo.InfoSentCountLastHour odesláno za hodinu, @Model.BaseInfo.InfoSentCountLastDay za den

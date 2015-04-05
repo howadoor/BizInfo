@@ -1,0 +1,65 @@
+﻿@using BizInfo.Harvesting.Services.Processing.Fragments
+@using BizInfo.Model.Entities
+@model BizInfo.WebApp.MVC3.Models.Base.BizInfoModel
+
+<div class="section">
+    @if (!Request.IsAuthenticated)
+    {
+        <text>Pro hledání v databázi se musíte @Html.ActionLink("přihlásit", "LogOn", "Account").</text>
+        return;
+    }
+    <div class="bizinfo">
+        @if (!string.IsNullOrEmpty(Model.BizInfo.PhotoUrls))
+        {
+            <div class="photos">
+                @foreach (var photoUrl in Model.BizInfo.PhotoUrlsList)
+                {
+                    <a href="@photoUrl"><img src="@photoUrl" alt="@Model.BizInfo.Summary" /></a>
+                }
+            </div>
+        }
+        @Html.Partial("BizInfoToolsView", Model)
+        <a class="title" href="@VirtualPathUtility.ToAbsolute(Model.DetailUrl)" title="Detailní zobrazení" target="_blank"><h2 class="summary">@Model.BizInfo.Summary</h2>
+            <div class="more">
+                @if (Model.BizInfo.StructuredContentDocument != null && !string.IsNullOrEmpty(Model.BizInfo.StructuredContentDocument.Price))
+                {
+                    <span class="creation-time" style="color: Green">@Model.BizInfo.StructuredContentDocument.Price</span>
+                    <text>&bull;</text>
+                }
+                <span class="creation-time">@Model.BizInfo.CreationTime</span>
+                &bull;
+                @if (Model.Category != null)
+                {
+                    <span class="category">@Model.Container.GetCategoryFullName(Model.Category, " > ")</span>
+                    <text>&bull;</text>
+                }
+                <span style="font-weight: normal;">
+                    <span class="creation-time">@((int) (Model.BizInfo.IsCompanyScore*100 + 0.5))</span>
+                    % &bull;
+                    @Model.BizInfo.Id
+                </span>
+            </div>
+        </a>
+        <div class="text">@MvcHtmlString.Create(TextProcessingTools.Processor.Process(Model.BizInfo.Text))</div>
+        <div class="structured">
+            <table>
+                @{if (Model.BizInfo.StructuredContentDocument != null && Model.BizInfo.StructuredContentDocument.Items != null)
+                  {
+                      foreach (var item in Model.BizInfo.StructuredContentDocument.Items)
+                      {
+                          <tr><th>@item.Key</th><td>@item.Value</td></tr>
+                      }
+                  }
+                }
+                <tr><th>source</th><td>@Model.WebSource.Url</td></tr>
+                <tr><th>scouted</th><td>@Model.WebSource.Scouted</td></tr>
+                <tr><th>processed</th><td>@Model.WebSource.Processed</td></tr>
+                <tr><th>sourceTag</th><td>@Model.SourceTagName</td></tr>
+                <tr><th>verbKindTag</th><td>@Model.VerbKindTagName</td></tr>
+                <tr><th>verbTag</th><td>@Model.VerbTagName</td></tr>
+                <tr><th>domainTag</th><td>@Model.DomainTagName</td></tr>
+            </table>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>

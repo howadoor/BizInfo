@@ -1,0 +1,22 @@
+﻿@using BizInfo.WebApp.MVC3.Tools
+@model BizInfo.WebApp.MVC3.Models.Base.SearchingMonitorModel
+                      
+<table>
+    <tr><th>Uživatel</th><th>Start</th><th>Trvání</th><th>Nalezeno</th><th>Kritéria</th></tr>
+    @foreach (var searchingLog in Model.Items)
+    {
+        var criteria = searchingLog.GetCriteria();
+        if (criteria == null)
+        {
+            continue;
+        }
+        <tr>
+            <td>@searchingLog.GetUserName()</td>
+            <td>@searchingLog.Start</td>
+            <td>@searchingLog.Duration</td>
+            <td>@searchingLog.ResultsCount</td>
+            <td>@Html.Partial("SearchCriteriaListView", criteria)</td>
+        </tr>
+    }
+</table>
+

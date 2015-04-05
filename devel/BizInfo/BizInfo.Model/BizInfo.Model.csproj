@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3AF60E5B-49A8-427A-AFC8-BA7E71D4D2F8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BizInfo.Model</RootNamespace>
+    <AssemblyName>BizInfo.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.4.2.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\libs\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\BizInfo.Designer.cs">
+      <DependentUpon>BizInfo.edmx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Entities\BizInfoModelContainerTools.cs" />
+    <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\CategoryTools.cs" />
+    <Compile Include="Entities\Extensions\TenantEx.cs" />
+    <Compile Include="Entities\Info.cs" />
+    <Compile Include="Entities\SearchingCriteriaModel.cs" />
+    <Compile Include="Entities\SearchingCriteriaModelEx.cs" />
+    <Compile Include="Entities\StructuredContent.cs" />
+    <Compile Include="Entities\UserAndInfo.cs" />
+    <Compile Include="Entities\WebSource.cs" />
+    <Compile Include="Interfaces\IBizInfo.cs" />
+    <Compile Include="Interfaces\ICategory.cs" />
+    <Compile Include="Interfaces\IContentAcceptor.cs" />
+    <Compile Include="Interfaces\IUrlDownloader.cs" />
+    <Compile Include="Interfaces\IUrlDownloadRequest.cs" />
+    <Compile Include="Interfaces\IWebSourceStorage.cs" />
+    <Compile Include="Interfaces\IWebSource.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="Entities\BizInfo.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BizInfo.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CodeTemplates\EntityGenCSharp\EntityGen.cs.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityGen.cs.tt</DependentUpon>
+    </Content>
+    <Content Include="CodeTemplates\EntityGenVB\EntityGen.txt">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EntityGen.tt</DependentUpon>
+    </Content>
+    <Content Include="Db_creation_script.sql" />
+    <Content Include="Entities\BizInfo.edmx.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="CodeTemplates\EntityGenCSharp\EntityGen.cs.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityGen.cs.txt</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\EntityGenCSharp\Includes\EFUtils.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Includes\EntityGenerator.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Blank.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\ODataService\DataService.svc.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\ODataService\DataService.svc.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Repository-Pattern\Repo.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Self-Tracking\Context.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Self-Tracking\Context.Extensions.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Self-Tracking\FakeContext.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Self-Tracking\IContext.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Self-Tracking\Model.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\UnitTest\EntityRepo.Test.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\UnitTest\FakeEntities.Test.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\UnitTest\FakeObjectSet.Test.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenCSharp\Templates\Validation\Validation.cs.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\EntityGen.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>EntityGen.txt</LastGenOutput>
+    </None>
+    <None Include="CodeTemplates\EntityGenVB\Includes\EFUtils.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Includes\EntityGenerator.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Blank.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\ODataService\DataService.svc.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\ODataService\DataService.svc.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Repository-Pattern\Repo.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Self-Tracking\Context.Extensions.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Self-Tracking\Context.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Self-Tracking\FakeContext.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Self-Tracking\IContext.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Self-Tracking\Model.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\UnitTest\EntityRepo.Test.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\UnitTest\FakeEntities.Test.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\UnitTest\FakeObjectSet.Test.vb.ttinclude" />
+    <None Include="CodeTemplates\EntityGenVB\Templates\Validation\Validation.vb.ttinclude" />
+    <None Include="Properties\DataSources\BizInfo.Model.Entities.BizInfoModelContainer.datasource" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Perenis.Core\Perenis.Core.csproj">
+      <Project>{236EF0AB-B312-4B0D-8B74-DB6845B5300B}</Project>
+      <Name>Perenis.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,16 @@
+﻿@model BizInfo.WebApp.MVC3.Models.Base.BaseInfoModel
+
+<table>
+    <tr><th>Zdroj</th><th>Za 60 min</th><th>Za 24 h</th><th>Za 100 dnů</th><th colspan="2">Celkem</th></tr>
+    @foreach (var sourceStatistics in Model.InfoBySources)
+    {
+        <tr>
+            <td>@sourceStatistics.Source</td>
+            <td>@sourceStatistics.AddedInLastHour</td>
+            <td>@sourceStatistics.AddedInLastDay</td>
+            <td>@sourceStatistics.AddedInLast100Days</td>
+            <td>@sourceStatistics.TotalCount</td>
+            <td>@string.Format("{0:0.##}", (double) sourceStatistics.TotalCount/Model.BaseInfo.BizInfoCount*100.0) %</td>
+        </tr>
+    }
+</table>

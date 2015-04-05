@@ -1,0 +1,37 @@
+﻿@model BizInfo.WebApp.MVC3.Models.Base.BaseInfoModel
+
+<table>
+    <tr>
+        <th>Počet obchodních informací v databázi</th><td>@Model.BaseInfo.BizInfoCount</td>
+    </tr>
+    <tr>
+        <th>Počet webových zdrojů v databázi</th><td>@Model.BaseInfo.WebSourcesCount</td>
+    </tr>
+    <tr>
+        <th>Za poslední hodinu přibylo</th><td>@Model.BaseInfo.WebSourcesCountLastHour</td>
+    </tr>
+    <tr>
+        <th>Za posledních 24 hodin přibylo</th><td>@Model.BaseInfo.WebSourcesCountLastDay</td>
+    </tr>
+    <tr>
+        <th>Počet úspěšně zpracovaných webových zdrojů</th><td>@Model.BaseInfo.SuccessfulyProcessedWebSourcesCount &nbsp; @string.Format("{0:0.##}", (double) Model.BaseInfo.SuccessfulyProcessedWebSourcesCount/Model.BaseInfo.WebSourcesCount*100.0) %</td>
+    </tr>
+    <tr>
+        <th>Počet neúspěšně zpracovaných webových zdrojů</th><td>@Model.BaseInfo.FailedProcessedWebSourcesCount &nbsp; @string.Format("{0:0.##}", (double) Model.BaseInfo.FailedProcessedWebSourcesCount/Model.BaseInfo.WebSourcesCount*100.0)  %</td>
+    </tr>
+    <tr>
+        <th>Počet webových zdrojů čekajících na zpracování</th><td>@Model.BaseInfo.NotProcessedWebSourcesCount &nbsp; @string.Format("{0:0.##}", (double) Model.BaseInfo.NotProcessedWebSourcesCount/Model.BaseInfo.WebSourcesCount*100.0) %</td>
+    </tr>
+    <tr>
+        <th>Počet informací s naplánovaným znovunačtením</th><td>@Model.BaseInfo.ScheduledSourcesForReload</td>
+    </tr>
+    <tr>
+        <th>Informací celkem odesláno uživatelům</th><td>@Model.BaseInfo.InfoSentCount</td>
+    </tr>
+    <tr>
+        <th>Odesláno za poslední hodinu</th><td>@Model.BaseInfo.InfoSentCountLastHour</td>
+    </tr>
+    <tr>
+        <th>Odesláno za posledních 24 hodin</th><td>@Model.BaseInfo.InfoSentCountLastDay</td>
+    </tr>
+</table>

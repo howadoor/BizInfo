@@ -1,0 +1,9 @@
+﻿
+@using BizInfo.WebApp.MVC3.Models.Common
+@model BizInfo.WebApp.MVC3.Models.Base.BaseViewModel
+         
+@{
+    var pagingModel = new PagingModel {TotalCount = SearchingCriteria.GetCount(), ItemsPerPage = 25, MaxAge = 30};
+    Html.RenderPartial("PagingView", pagingModel);
+}
+

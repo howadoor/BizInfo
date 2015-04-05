@@ -1,0 +1,46 @@
+﻿@model BizInfo.Model.Entities.SearchingCriteriaModel
+
+@{
+    ViewBag.Title = "Base";
+}
+
+@if (!Request.IsAuthenticated)
+{
+    <text>Pro hledání v databázi se musíte @Html.ActionLink("přihlásit", "LogOn", "Account").</text>
+    return;
+}
+<div class="tab-form searching-form">
+    @using (Ajax.BeginForm("Search", new AjaxOptions {HttpMethod = "Get", UpdateTargetId = "BaseView", LoadingElementDuration = 2000, LoadingElementId = "db-search-in-progress",}))
+    {
+        @Html.Partial("SearchingCriteriaView", Model)
+        <input id="newWatchId" type="hidden" name="newWatchId" value="-1" />
+        <input id="newWatchName" type="hidden" name="newWatchName" value="" />
+        <input id="search-submit" type="submit" name="searchButton" value="Hledat" />
+        <input id="store" type="submit" name="storeAndWatchButton" value="Uložit a hlídat" style="display:none;"/>
+        <script>
+            $(function() {
+                $("input:submit", ".searching-form").button();
+            });
+        </script>
+        <div id="StoreWatch"></div>
+    }
+    @using (Ajax.BeginForm("StoreWatch", new AjaxOptions { HttpMethod = "Get", UpdateTargetId = "StoreWatch" }))
+    {
+        <input id="store-watch-submit" type="submit" name="storeWatchButton" value="Uložit a hlídat" />
+        <script>
+            $(function() {
+                $("input:submit", ".searching-form").button();
+            });
+        </script>
+    }
+    <div class="clear"></div>
+</div>
+<div class="section">
+    <div id="db-search-in-progress" style="display: none;">
+        Prohledávám databázi&hellip;<br />      <img src="@VirtualPathUtility.ToAbsolute("~/Images/animated_progress_bar.gif")" alt="Prohledávání databáze" />
+    </div>
+    <div id="BaseView">
+        <script>$("#search-submit").click();</script>
+    </div>
+    <div class="clear"></div>
+</div>

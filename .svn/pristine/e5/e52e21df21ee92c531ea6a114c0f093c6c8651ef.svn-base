@@ -1,0 +1,41 @@
+﻿@model BizInfo.WebApp.MVC3.Models.Base.StoreWatchModel
+
+@{
+    var dialogId = string.Format("storeWatchDlg{0}", DateTime.Now.Ticks);
+    <div id="@dialogId" title="Uložit a hlídat" style="font-size: 75%; padding: 24px;">
+        <script>
+            $(function () {
+                $("#@dialogId").dialog({
+                    modal: true,
+                    width: 640
+                });
+                $("a", "#@dialogId").button();
+            });
+
+            function storeWatch(newWatchId) {
+                var watchName = $("#watchName").attr("value");
+                $("#@dialogId").dialog("destroy");
+                $("#newWatchId").attr("value", newWatchId);
+                $("#newWatchName").attr("value", watchName);
+                $("#store").click();
+            }
+        </script>
+        <table style="width: 100%;">
+            @if (Model.Watches.Length > 0)
+            {
+                <tr><td colspan="2"><h2 style="margin: 0 0 0 0;">Přepsat existujícího hlídače</h2></td></tr>
+                foreach (var watch in Model.Watches)
+                {
+                    <tr><td>@watch.Name</td><td><a href="javascript:storeWatch(@watch.Id)">Uložit</a></td></tr>
+                }
+            }
+            @if(Model.Watches.Length < Model.MaxCountOfWatches)
+            {
+                <tr><td colspan="2"><h2 style="padding: 0 0 0 0;">Uložit jako nového hlídače</h2></td></tr>
+                <tr><td colspan="2"><b>Doporučení:</b>Zvolte si pro svého hlídače výstižné jméno, např. <i>Byty v Ostravě a okolí</i> nebo <i>Tahače značky Ford</i></td></tr>
+                <tr><td><input id="watchName" type="text" value="@string.Format("Hlídač {0}", Model.Watches.Length + 1)"/></td><td><a href="javascript:storeWatch(-1)">Uložit</a></td></tr>
+            }
+        </table>
+    </div>
+}
+	

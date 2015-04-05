@@ -1,0 +1,14 @@
+﻿@model BizInfo.WebApp.MVC3.Models.Base.MailingMonitorModel
+                      
+<table>
+    <tr><th>Čas odeslání</th><th>Příjemce</th><th>Počet položek ve zprávě</th></tr>
+    @foreach (var sentMessage in Model.Items)
+    {
+        <tr>
+            <td>@sentMessage.SendTime</td>
+            <td><a href="mailto:@sentMessage.Mail">@sentMessage.Mail</a></td>
+            <td>@sentMessage.ContainedInfoCount</td>
+        </tr>
+    }
+</table>
+

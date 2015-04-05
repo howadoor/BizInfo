@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{51F91E19-F5AE-49C1-BDF9-D73BA5B77BB2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>BizInfo.Harvesting.Services</RootNamespace>
+    <AssemblyName>BizInfo.Harvesting.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\libs\HtmlAgilityPack.dll</HintPath>
+    </Reference>
+    <Reference Include="Ionic.Zip">
+      <HintPath>..\libs\Ionic.Zip.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\BlobsStorage.cs" />
+    <Compile Include="Core\BlobsStorageManifest.cs" />
+    <Compile Include="Core\Daemon.cs" />
+    <Compile Include="Core\DaemonStatus.cs" />
+    <Compile Include="Core\DaemonStatusChangedEventArgs.cs" />
+    <Compile Include="Core\DaemonStatusLogger.cs" />
+    <Compile Include="Core\Harvester.cs" />
+    <Compile Include="Core\UrlDownloadRequest.cs" />
+    <Compile Include="Core\ZipHelpers.cs" />
+    <Compile Include="Core\UrlBlobsCache.cs" />
+    <Compile Include="Core\UrlDownloader.cs" />
+    <Compile Include="Messaging\DbMaintainer.cs" />
+    <Compile Include="Messaging\IMessageCreator.cs" />
+    <Compile Include="Messaging\IMessageSender.cs" />
+    <Compile Include="Messaging\MessageCreator.cs" />
+    <Compile Include="Messaging\MessageSender.cs" />
+    <Compile Include="Messaging\NewItemsSender.cs" />
+    <Compile Include="Processing\AnnonceParser.cs" />
+    <Compile Include="Processing\AukroParser.cs" />
+    <Compile Include="Processing\AukroProcessor.cs" />
+    <Compile Include="Processing\AvizoParser.cs" />
+    <Compile Include="Processing\AvizoProcessor.cs" />
+    <Compile Include="Processing\BezRealitkyParser.cs" />
+    <Compile Include="Processing\BezRealitkyProcessor.cs" />
+    <Compile Include="Processing\Helpers\Canonicalization.cs" />
+    <Compile Include="Processing\Helpers\ContentHashTools.cs" />
+    <Compile Include="Processing\SBazarParser.cs" />
+    <Compile Include="Processing\AnnonceProcessor.cs" />
+    <Compile Include="Processing\BazosParser.cs" />
+    <Compile Include="Processing\BazosProcessor.cs" />
+    <Compile Include="Processing\CommonOfferParser.cs" />
+    <Compile Include="Processing\CommonOffersProcessor.cs" />
+    <Compile Include="Processing\CompanyScoreTools\CompanyScoreComputer.cs" />
+    <Compile Include="Processing\CompanyScoreTools\FragmentsOccurencyDictionary.cs" />
+    <Compile Include="Processing\CompanyScoreTools\ICompanyScoreComputer.cs" />
+    <Compile Include="Processing\DispatchingWebSourceProcessor.cs" />
+    <Compile Include="Processing\Fragments\FragmentsFinderEx.cs" />
+    <Compile Include="Processing\Fragments\FragmentsProcessor.cs" />
+    <Compile Include="Processing\Fragments\IFragmentsFinder.cs" />
+    <Compile Include="Processing\Fragments\MailFragmentFinder.cs" />
+    <Compile Include="Processing\Fragments\DbMaintenanceTools.cs" />
+    <Compile Include="Processing\Fragments\PhoneFragmentFinder.cs" />
+    <Compile Include="Processing\Fragments\RegexBasedFragmentsFinder.cs" />
+    <Compile Include="Processing\Fragments\TextProcessingTools.cs" />
+    <Compile Include="Processing\Fragments\UrlFragmentFinder.cs" />
+    <Compile Include="Processing\Helpers\HtmlNodeHelpers.cs" />
+    <Compile Include="Processing\HyperInzerceParser.cs" />
+    <Compile Include="Processing\HyperinzerceProcessor.cs" />
+    <Compile Include="Processing\InzertExpresParser.cs" />
+    <Compile Include="Processing\InzertExpresProcessor.cs" />
+    <Compile Include="Processing\IParsingFailureDetector.cs" />
+    <Compile Include="Processing\ParsingFailureDetector.cs" />
+    <Compile Include="Processing\LoggingParsingFailureDetector.cs" />
+    <Compile Include="Processing\ParsingFailureReason.cs" />
+    <Compile Include="Processing\ProcessingBase.cs" />
+    <Compile Include="Processing\ProcessingManager.cs" />
+    <Compile Include="Processing\SBazarProcessor.cs" />
+    <Compile Include="Processing\Tagger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Scouting\AnnonceScout.cs" />
+    <Compile Include="Scouting\AukroScout.cs" />
+    <Compile Include="Scouting\AvizoScout.cs" />
+    <Compile Include="Scouting\BazosScout.cs" />
+    <Compile Include="Scouting\BezRealitkyScout.cs" />
+    <Compile Include="Scouting\CommonScout.cs" />
+    <Compile Include="Scouting\HyperInzerceScout.cs" />
+    <Compile Include="Scouting\InzertExpresScout.cs" />
+    <Compile Include="Scouting\Management\ManagedScoutingAcceptor.cs" />
+    <Compile Include="Scouting\Management\ScoutInfo.cs" />
+    <Compile Include="Scouting\Management\ScoutingManagerTools.cs" />
+    <Compile Include="Scouting\SBazarScout.cs" />
+    <Compile Include="Scouting\ScoutingAcceptor.cs" />
+    <Compile Include="Scouting\Management\ScoutingManager.cs" />
+    <Compile Include="SearchingTools.cs" />
+    <Compile Include="SpecialServices\MailExtractor.cs" />
+    <Compile Include="Storage\EntityStorage.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BizInfo.App.Services\BizInfo.App.Services.csproj">
+      <Project>{1088AFF9-BE56-4487-8084-FA60E1A41BB0}</Project>
+      <Name>BizInfo.App.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizInfo.Core.Services\BizInfo.Core.Services.csproj">
+      <Project>{35712728-4D00-4AA5-A64B-DF7CE4E41538}</Project>
+      <Name>BizInfo.Core.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizInfo.Harvesting.Interfaces\BizInfo.Harvesting.Interfaces.csproj">
+      <Project>{12FB7DFC-FD8B-486B-84CD-3EB5690538C2}</Project>
+      <Name>BizInfo.Harvesting.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\BizInfo.Model\BizInfo.Model.csproj">
+      <Project>{3AF60E5B-49A8-427A-AFC8-BA7E71D4D2F8}</Project>
+      <Name>BizInfo.Model</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Perenis.Core\Perenis.Core.csproj">
+      <Project>{236EF0AB-B312-4B0D-8B74-DB6845B5300B}</Project>
+      <Name>Perenis.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\bizinfo_db_script.sql" />
+    <Content Include="Scripts\hascontact_computed_column.sql" />
+    <EmbeddedResource Include="Scripts\refresh_indexes.sql" />
+    <EmbeddedResource Include="Scripts\message_style.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Scripts\occurency_computing.sql" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

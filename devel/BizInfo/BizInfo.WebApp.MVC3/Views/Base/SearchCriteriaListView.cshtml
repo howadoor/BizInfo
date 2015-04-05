@@ -1,0 +1,27 @@
+﻿@using BizInfo.WebApp.MVC3.Tools
+@model BizInfo.Model.Entities.SearchCriteria
+                      
+@{
+    if (Model == null)
+    {
+        return;
+    }
+    var criteriaModel = Model.GetCriteriaModel();
+    if (criteriaModel == null)
+    {
+        return;
+    }
+    <table>
+        @if (!string.IsNullOrEmpty(criteriaModel.Phrase))
+        {
+            <tr><th>Obsahuje</th><td>@criteriaModel.Phrase</td></tr>
+        }
+        @if (!string.IsNullOrEmpty(criteriaModel.NotAllowedPhrase))
+        {
+            <tr><th>Neobsahuje</th><td>@criteriaModel.NotAllowedPhrase</td></tr>
+        }
+        <tr><td colspan="2" style="text-align: right; font-weight: bold;"><a href="@VirtualPathUtility.ToAbsolute(Model.GetSearchUrl())">Vyhledat</a></td></tr>
+    </table>
+}
+
+

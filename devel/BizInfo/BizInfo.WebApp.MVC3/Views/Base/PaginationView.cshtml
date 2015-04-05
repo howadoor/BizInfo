@@ -1,0 +1,37 @@
+﻿@using BizInfo.WebApp.MVC3.Models.Base
+@model BizInfo.WebApp.MVC3.Models.Common.PagingModel
+           
+<div class="pagination">
+    <div class="paging">
+        @foreach (var pageIndex in Model.NavigationPageIndices)
+        {
+            <span class="page-link">
+                @if (pageIndex == Model.CurrentPage)
+                {
+                    @(pageIndex + 1)
+                    ;
+                }
+                else
+                {
+                    var target = new {CurrentPage = pageIndex, Model.Phrase, Model.NotAllowedPhrase, Sources = Model.GetSourcesAsString(), VerbKinds = Model.GetVerbKindsAsString(), Verbs = Model.GetVerbsAsString(), Domains = Model.GetDomainsAsString(), Model.Important, Model.Company, Model.CompanyLimit, Model.TotalCount, Model.ItemsPerPage, Model.MaxAge, Model.HasContact};
+                    @Ajax.ActionLink((pageIndex + 1).ToString(), "GoTo", target, new AjaxOptions {UpdateTargetId = "bizinfo-page"})
+                    ;
+                }
+            </span>
+        }
+    </div>
+    @if (Model.TotalCount <= 0)
+    {
+        <text>Nenalezeny žádné záznamy</text>
+    }
+    else
+    {
+        if (Model.TotalCount > 1000)
+        {<text>@string.Format(@"Nalezeno více než 1000 záznamů, zobrazuji {0}-{1}", Model.StartIndex + 1, Model.EndIndex)</text>
+        }
+        else
+        {<text>@string.Format("Nalezeno {0} záznamů, zobrazuji {1}-{2}", Model.TotalCount, Model.StartIndex + 1, Model.EndIndex)</text>
+        }
+    }
+</div>
+

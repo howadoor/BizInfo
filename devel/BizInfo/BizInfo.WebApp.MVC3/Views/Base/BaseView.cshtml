@@ -1,0 +1,18 @@
+﻿
+@using BizInfo.WebApp.MVC3.Models.Common
+@using BizInfo.WebApp.MVC3.Tools
+@model BizInfo.Model.Entities.SearchingCriteriaModel
+
+@if (!Request.IsAuthenticated)
+{
+    <text>Pro hledání v databázi se musíte @Html.ActionLink("přihlásit", "LogOn", "Account").</text>
+    return;
+}
+@{
+    LoggedTenant.LastUsedSearchCriteria = Model;
+    var pagingModel = new PagingModel(Model) {TotalCount = Model.GetCount(), ItemsPerPage = 25};
+    <div id="bizinfo-page">
+        @Html.Partial("PagingView", pagingModel)
+    </div>
+}
+

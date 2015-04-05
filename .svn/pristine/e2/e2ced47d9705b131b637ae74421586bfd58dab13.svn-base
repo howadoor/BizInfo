@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<publishData>
+  <publishProfile publishUrl="C:\Inetpub\wwwroot\BizInfo" deleteExistingFiles="False" ftpAnonymousLogin="False" ftpPassiveMode="True" msdeploySite="" msdeploySiteID="" msdeployRemoteSitePhysicalPath="" msdeployAllowUntrustedCertificate="False" msdeploySkipExtraFilesOnServer="True" msdeployMarkAsApp="False" profileName="BizInfo.WebApp" publishMethod="FileSystem" replaceMatchingFiles="True" userName="" savePWD="False" userPWD="" SelectedForPublish="True">
+    <file relUrl="Images/BlueLeftCorner.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="bin/BizInfo.App.Services.dll" publishTime="09/14/2011 14:28:47" />
+    <file relUrl="Images/PagingFirst.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/BlueCenter.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Global.asax" publishTime="09/08/2011 19:48:38" />
+    <file relUrl="Scripts/jquery-1.4.1-vsdoc.js" publishTime="09/08/2011 19:48:38" />
+    <file relUrl="Site.Master" publishTime="09/08/2011 21:18:26" />
+    <file relUrl="Styles/Site.css" publishTime="09/13/2011 20:40:03" />
+    <file relUrl="Images/star0.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/star8.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/star10.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="About.aspx" publishTime="09/08/2011 21:31:06" />
+    <file relUrl="Scripts/jquery-1.4.1.js" publishTime="09/08/2011 19:48:38" />
+    <file relUrl="Images/PagingPrevious.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="bin/BizInfo.WebApp.dll" publishTime="09/14/2011 14:28:48" />
+    <file relUrl="App_Code/AppsRepository.cs" publishTime="09/13/2011 15:30:02" />
+    <file relUrl="Scripts/jquery-1.4.1.min.js" publishTime="09/08/2011 19:48:38" />
+    <file relUrl="Images/star3.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="bin/BizInfo.WebApp.pdb" publishTime="09/14/2011 14:28:48" />
+    <file relUrl="Account/Web.config" publishTime="09/08/2011 20:11:45" />
+    <file relUrl="Account/Register.aspx" publishTime="09/08/2011 21:30:01" />
+    <file relUrl="Account/Login.aspx" publishTime="09/08/2011 21:32:43" />
+    <file relUrl="Images/star6.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/BlueRightCorner.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Controls/PageTitle.ascx" publishTime="09/13/2011 12:54:47" />
+    <file relUrl="Default.aspx" publishTime="09/10/2011 12:52:42" />
+    <file relUrl="Account/ChangePasswordSuccess.aspx" publishTime="09/08/2011 19:48:38" />
+    <file relUrl="Images/RecordView.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Controls/InfoView.ascx" publishTime="09/14/2011 14:28:42" />
+    <file relUrl="Images/FooterBackground.gif" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/star9.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/star1.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/star5.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/FooterBackground.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Images/star4.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Account/ChangePassword.aspx" publishTime="09/08/2011 21:30:01" />
+    <file relUrl="Images/PagingLast.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Web.config" publishTime="09/14/2011 14:29:05" />
+    <file relUrl="bin/BizInfo.Model.pdb" publishTime="09/14/2011 14:28:47" />
+    <file relUrl="Images/google_favicon.png" publishTime="09/09/2011 18:31:09" />
+    <file relUrl="Images/star2.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="bin/BizInfo.App.Services.pdb" publishTime="09/14/2011 14:28:46" />
+    <file relUrl="Images/star7.png" publishTime="09/13/2011 14:42:00" />
+    <file relUrl="Controls/CustomDataPager.ascx" publishTime="09/13/2011 17:36:05" />
+    <file relUrl="bin/BizInfo.Model.dll" publishTime="09/14/2011 14:28:48" />
+    <file relUrl="Images/information_160.png" publishTime="09/08/2011 21:00:27" />
+    <file relUrl="Images/PagingNext.png" publishTime="09/13/2011 14:42:00" />
+  </publishProfile>
+</publishData>

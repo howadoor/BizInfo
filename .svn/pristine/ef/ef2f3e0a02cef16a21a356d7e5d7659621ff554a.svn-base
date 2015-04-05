@@ -1,0 +1,37 @@
+﻿@using BizInfo.App.Services.Tools
+@model BizInfo.WebApp.MVC3.Models.Base.BizInfoModel
+@{
+    var noteEditorId = string.Format("note-editor-{0}", Model.BizInfo.Id);
+    var noteIconId = string.Format("note-icon-{0}", Model.BizInfo.Id);
+    var noteEditorInitialClass = Model.HasNoteOfCurrentUser ? null : "invisible";
+    var noteEditorTogglingClass = Model.HasNoteOfCurrentUser ? "invisible" : "visible";
+    <div class="tools">
+        @* Icon of user's note *@
+        <a title="Poznámka" id="@noteIconId" href="#@noteIconId">
+            <img src="@VirtualPathUtility.ToAbsolute("~/Images/note_32.png")" alt="Poznámka" />
+        </a>
+        <script>
+            $(function() {
+                $("#@noteIconId").click(function() {
+                    $("#@noteEditorId").toggleClass("@noteEditorTogglingClass");
+                    return false;
+                });
+            });
+        </script>
+        @* Icon of importancy flag *@
+        @Model.CreateImportancyActionLink(Ajax)
+        @* Icon of timer if information is scheduled for reload *@
+        @if (Model.IsScheduledForReload)
+        {
+            var title = string.Format("Informace bude znovu načtena {0}", Model.ScheduledReload.ScheduledTime);
+            <img src="@VirtualPathUtility.ToAbsolute("~/Images/timer_32.png")" alt="@title" title="@title" />
+        }
+        @* Icon arrow as a link to original source *@
+        @{
+            var sourceLink = string.Format("Jít ke zdroji ({0})", UrlTools.GetServerOnly(Model.WebSource.Url));
+            <a href="@Model.WebSource.Url" title="@sourceLink" target="_blank">
+                <img src="@VirtualPathUtility.ToAbsolute("~/Images/right_arrow_32.png")" alt="@sourceLink" />
+            </a>
+        }
+    </div>
+}

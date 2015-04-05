@@ -1,0 +1,428 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{236EF0AB-B312-4B0D-8B74-DB6845B5300B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Perenis.Core</RootNamespace>
+    <AssemblyName>Perenis.Core</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Release\Perenis.Core.XML</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\Perenis.Code.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Common.Logging">
+      <HintPath>..\libs\Spring\Common.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="Spring.Core">
+      <HintPath>..\libs\Spring\Spring.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Caching\ExtendedGCHandle.cs" />
+    <Compile Include="Caching\GCUtils.cs" />
+    <Compile Include="Caching\KeepAliveWeakReference.cs" />
+    <Compile Include="Caching\Obsolete\WeakHashSet.cs" />
+    <Compile Include="Caching\ResultCache.cs" />
+    <Compile Include="Caching\Tags\ITags.cs" />
+    <Compile Include="Caching\Tags\StrongTags.cs" />
+    <Compile Include="Caching\Tags\Tags.cs" />
+    <Compile Include="Caching\Tags\WeakTags.cs" />
+    <Compile Include="Caching\UnsafeWeakArray.cs" />
+    <Compile Include="Caching\WeakArray.cs" />
+    <Compile Include="Caching\WeakDelegate.cs" />
+    <Compile Include="Caching\WeakDelegateBase.cs" />
+    <Compile Include="Caching\WeakDelegateSet.cs" />
+    <Compile Include="Caching\WeakDictionary.cs" />
+    <Compile Include="Caching\WeakHashSet.cs" />
+    <Compile Include="Caching\WeakKeyDictionary.cs" />
+    <Compile Include="Caching\WeakReference.cs" />
+    <Compile Include="Collections\CascadedEnumerable.cs" />
+    <Compile Include="Collections\CompoundKey.cs" />
+    <Compile Include="Collections\EnumBag.cs" />
+    <Compile Include="Collections\EnumDictionary.cs" />
+    <Compile Include="Collections\EnumerableEx.cs" />
+    <Compile Include="Collections\EnumeratorEx.cs" />
+    <Compile Include="Collections\ICollectionEx.cs" />
+    <Compile Include="Collections\IndexedList.cs" />
+    <Compile Include="Collections\INotifyListChanged.cs" />
+    <Compile Include="Collections\ListChangedEventArgsEx.cs" />
+    <Compile Include="Collections\ListChangedEventManager.cs" />
+    <Compile Include="Collections\ListEx.cs" />
+    <Compile Include="Collections\ObservableCollectionEx.cs" />
+    <Compile Include="Collections\QueueEx.cs" />
+    <Compile Include="Collections\Set.cs" />
+    <Compile Include="Collections\SingleEnumerable.cs" />
+    <Compile Include="Collections\StackWithOptionalNames.cs" />
+    <Compile Include="Collections\ThreadSafeList.cs" />
+    <Compile Include="CommandLine\ArgumentProcessor.cs" />
+    <Compile Include="CommandLine\CmdArgumentAttribute.cs" />
+    <Compile Include="CommandLine\CmdOperationAttribute.cs" />
+    <Compile Include="CommandLine\CommandLineParser.cs" />
+    <Compile Include="CommandLine\CommandLineProcessor.cs" />
+    <Compile Include="CommandLine\ICmdOperation.cs" />
+    <Compile Include="CommandLine\ICommandLineParser.cs" />
+    <Compile Include="CommandLine\ICommandLineProcessor.cs" />
+    <Compile Include="CommandLine\IRootCmdOperation.cs" />
+    <Compile Include="CommandLine\IValidableCmdOperation.cs" />
+    <Compile Include="CommandLine\OperationProcessor.cs" />
+    <Compile Include="Component\EnumStructuredNamingResolver.cs" />
+    <Compile Include="Component\Events\DispatcherEx.cs" />
+    <Compile Include="Component\Events\EventDeliveryModeAttribute.cs" />
+    <Compile Include="Component\Events\EventInvoker.cs" />
+    <Compile Include="Component\Events\EventWiringModeAttribute.cs" />
+    <Compile Include="Component\Events\ISynchronizeInvokeAware.cs" />
+    <Compile Include="Component\IComponent.cs" />
+    <Compile Include="Component\IStructuredNamingResolver.cs" />
+    <Compile Include="Component\Parameters\InvalidParamsException.cs" />
+    <Compile Include="Component\Parameters\IParamBindingAware.cs" />
+    <Compile Include="Component\Parameters\IParametersAware.cs" />
+    <Compile Include="Component\Parameters\MissingParamsException.cs" />
+    <Compile Include="Component\Parameters\ParamAttribute.cs" />
+    <Compile Include="Component\Parameters\ParamBinder.cs" />
+    <Compile Include="Component\Parameters\ParamContainerAttribute.cs" />
+    <Compile Include="Component\Parameters\Parameter.cs" />
+    <Compile Include="Component\Parameters\ParameterCollection.cs" />
+    <Compile Include="Component\Parameters\ParamMode.cs" />
+    <Compile Include="Component\Parameters\ParamsBuilder.cs" />
+    <Compile Include="Component\Parameters\ParamTypeAttribute.cs" />
+    <Compile Include="Component\Progress\CompoundProgressController.cs" />
+    <Compile Include="Component\Progress\CompoundProgressNotification.cs" />
+    <Compile Include="Component\Progress\GlobalProgressNotification.cs" />
+    <Compile Include="Component\Progress\IProgressAdvance.cs" />
+    <Compile Include="Component\Progress\IProgressController.cs" />
+    <Compile Include="Component\Progress\IProgressInformation.cs" />
+    <Compile Include="Component\Progress\IProgressMessage.cs" />
+    <Compile Include="Component\Progress\IProgressNotification.cs" />
+    <Compile Include="Component\Progress\IProgressObserver.cs" />
+    <Compile Include="Component\Progress\IProgressObserverAware.cs" />
+    <Compile Include="Component\Progress\IProgressPercentageConsumer.cs" />
+    <Compile Include="Component\Progress\IProgressPercentageConsumerAware.cs" />
+    <Compile Include="Component\Progress\IProgressService.cs" />
+    <Compile Include="Component\Progress\IProgressTransaction.cs" />
+    <Compile Include="Component\Progress\Poller.cs" />
+    <Compile Include="Component\Progress\Progress.cs" />
+    <Compile Include="Component\Progress\ProgressAdvance.cs" />
+    <Compile Include="Component\Progress\ProgressClientSink.cs" />
+    <Compile Include="Component\Progress\ProgressClientSinkProvider.cs" />
+    <Compile Include="Component\Progress\ProgressController.cs" />
+    <Compile Include="Component\Progress\ProgressMessage.cs" />
+    <Compile Include="Component\Progress\ProgressPercentageConsumer.cs" />
+    <Compile Include="Component\Progress\ProgressServerSink.cs" />
+    <Compile Include="Component\Progress\ProgressServerSinkProvider.cs" />
+    <Compile Include="Component\Progress\ProgressService.cs" />
+    <Compile Include="Component\Progress\ProgressTransaction.cs" />
+    <Compile Include="Component\Progress\ProgressTransactionBase.cs" />
+    <Compile Include="Component\Progress\ProxyProgressTransaction.cs" />
+    <Compile Include="Component\Progress\RemoteProgressObserver.cs" />
+    <Compile Include="Component\Progress\RemoteProgressPercentageConsumer.cs" />
+    <Compile Include="Component\Progress\RemotingServerUrlWorkarround.cs" />
+    <Compile Include="Component\Progress\Severity.cs" />
+    <Compile Include="Component\StringStructuredNamingResolver.cs" />
+    <Compile Include="Component\StructuredNameAttribute.cs" />
+    <Compile Include="Component\StructuredNameUtils.cs" />
+    <Compile Include="Component\StructuredNamingResolver.cs" />
+    <Compile Include="Component\TypeConverterUtilsTypeEx.cs" />
+    <Compile Include="Component\TypeStructuredNamingResolver.cs" />
+    <Compile Include="Component\WeakEventManager.cs" />
+    <Compile Include="Component\WeakReference.cs" />
+    <Compile Include="Configuration\BeeSectionGroup.cs" />
+    <Compile Include="Configuration\ConfigurationElementCollectionEx.cs" />
+    <Compile Include="Configuration\NamedConfigurationElement.cs" />
+    <Compile Include="Configuration\NamedConfigurationElementCollection.cs" />
+    <Compile Include="Decoupling\Multimethods\BasicBestMatchingMethodFinder.cs" />
+    <Compile Include="Decoupling\Multimethods\Constraints.cs" />
+    <Compile Include="Decoupling\Multimethods\Delegates.cs" />
+    <Compile Include="Decoupling\Multimethods\Dispatcher.cs" />
+    <Compile Include="Decoupling\Multimethods\DispatcherCache.cs" />
+    <Compile Include="Decoupling\Multimethods\DispatchResult.cs" />
+    <Compile Include="Decoupling\Multimethods\DispatchTable.cs" />
+    <Compile Include="Decoupling\Multimethods\IBestMatchingFinder.cs" />
+    <Compile Include="Decoupling\Multimethods\Implementor.cs" />
+    <Compile Include="Decoupling\Multimethods\MethodInvoker.cs" />
+    <Compile Include="Decoupling\Multimethods\ServiceDispatcher.cs" />
+    <Compile Include="Decoupling\Multimethods\ServiceFunctionDispatcher.cs" />
+    <Compile Include="Decoupling\SpecializedGenerics.cs" />
+    <Compile Include="Exceptions\ExceptionEx.cs" />
+    <Compile Include="Exceptions\Configuration\ExceptionHandlerElement.cs" />
+    <Compile Include="Exceptions\Configuration\ExceptionHandlerRuleElement.cs" />
+    <Compile Include="Exceptions\Configuration\ExceptionPolicyConfigurationSection.cs" />
+    <Compile Include="Exceptions\Configuration\ExceptionPolicyElement.cs" />
+    <Compile Include="Exceptions\Configuration\ExceptionPolicyRuleElement.cs" />
+    <Compile Include="Exceptions\Configuration\ExceptionPolicyTemplateElement.cs" />
+    <Compile Include="Exceptions\Ex.cs" />
+    <Compile Include="Exceptions\ExceptionFormatterBase.cs" />
+    <Compile Include="Exceptions\ExceptionHandler.cs" />
+    <Compile Include="Exceptions\IExceptionFormatter.cs" />
+    <Compile Include="Exceptions\IExceptionHandler.cs" />
+    <Compile Include="Exceptions\IExceptionPolicy.cs" />
+    <Compile Include="Exceptions\LoggingExceptionHandler.cs" />
+    <Compile Include="Exceptions\PerenisException.cs" />
+    <Compile Include="Exceptions\TextExceptionFormatter.cs" />
+    <Compile Include="Exceptions\XmlExceptionFormatter.cs" />
+    <Compile Include="General\IContextualPresenter.cs" />
+    <Compile Include="General\PlatformInfo.cs" />
+    <Compile Include="General\PresenterEx.cs" />
+    <Compile Include="General\SelfAware.cs" />
+    <Compile Include="GuidEx.cs" />
+    <Compile Include="IAsyncResult.cs" />
+    <Compile Include="Intentionally\Intention.cs" />
+    <Compile Include="Interfaces\IAttachable.cs" />
+    <Compile Include="Interfaces\IHosted.cs" />
+    <Compile Include="Interfaces\IManipulator.cs" />
+    <Compile Include="General\Aware.cs" />
+    <Compile Include="General\Cloneable.cs" />
+    <Compile Include="General\DisplayNameAttribute.cs" />
+    <Compile Include="General\Extensions.cs" />
+    <Compile Include="General\IAdvancedDisposable.cs" />
+    <Compile Include="General\IAware.cs" />
+    <Compile Include="General\IPresenter.cs" />
+    <Compile Include="General\Objects.cs" />
+    <Compile Include="General\Presenter.cs" />
+    <Compile Include="General\ThreadSafeDisposable.cs" />
+    <Compile Include="General\UnlimitedThreadPool.cs" />
+    <Compile Include="Interfaces\IManipulatorsCollection.cs" />
+    <Compile Include="Interfaces\INameResolver.cs" />
+    <Compile Include="Interfaces\IWithName.cs" />
+    <Compile Include="Interfaces\Manipulator.cs" />
+    <Compile Include="Interfaces\ManipulatorsCollection.cs" />
+    <Compile Include="IO\CompositeOutputWriter.cs" />
+    <Compile Include="IO\ConsoleOutputWriter.cs" />
+    <Compile Include="IO\FileOutputWriter.cs" />
+    <Compile Include="IO\IOutputWriter.cs" />
+    <Compile Include="IO\PathEx.cs" />
+    <Compile Include="IO\StreamEx.cs" />
+    <Compile Include="Log\DataLogger.cs" />
+    <Compile Include="Log\ExceptionLogger.cs" />
+    <Compile Include="Log\Logging.cs" />
+    <Compile Include="Log\LoggingContext.cs" />
+    <Compile Include="Log\LoggingContextProvider.cs" />
+    <Compile Include="Pattern\Disposable.cs" />
+    <Compile Include="Pattern\EncapsulatedCondition.cs" />
+    <Compile Include="Pattern\IAcceptor.cs" />
+    <Compile Include="Pattern\IFactory.cs" />
+    <Compile Include="Pattern\IFilter.cs" />
+    <Compile Include="Pattern\IRegistrar.cs" />
+    <Compile Include="Pattern\IVisitorContext.cs" />
+    <Compile Include="Pattern\IVisitorContextAware.cs" />
+    <Compile Include="Pattern\Singleton.cs" />
+    <Compile Include="Pattern\Visitor.cs" />
+    <Compile Include="Pattern\VisitorContextBase.cs" />
+    <Compile Include="Pattern\VisitorDriver.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\VersionInfo.cs" />
+    <Compile Include="Reflection\Assemblies.cs" />
+    <Compile Include="Reflection\AssemblyEx.cs" />
+    <Compile Include="Reflection\AssemblyGlobalInitializer.cs" />
+    <Compile Include="Reflection\AssemblyGlobalInitializerAttribute.cs" />
+    <Compile Include="Reflection\AttributeManager.cs" />
+    <Compile Include="Reflection\AttributeManagerAttribute.cs" />
+    <Compile Include="Reflection\AttributeManagerRegistry.cs" />
+    <Compile Include="Reflection\Configuration\AssemblyConfigurationSection.cs" />
+    <Compile Include="Reflection\Configuration\AssemblyPreloadElement.cs" />
+    <Compile Include="Reflection\DescriptionEnumDecorator.cs" />
+    <Compile Include="Reflection\EnumDecorator.cs" />
+    <Compile Include="Reflection\EnumEx.cs" />
+    <Compile Include="Reflection\ExpressionHelper.cs" />
+    <Compile Include="Reflection\ITypeFactory.cs" />
+    <Compile Include="Reflection\ITypeFactoryNonPublic.cs" />
+    <Compile Include="Reflection\ITypeRegistryPolicy.cs" />
+    <Compile Include="Reflection\MethodInfoEx.cs" />
+    <Compile Include="Reflection\ObjectFactory.cs" />
+    <Compile Include="Reflection\PropertyFieldAbstractor.cs" />
+    <Compile Include="Reflection\PropertyInfoEx.cs" />
+    <Compile Include="Reflection\TypeAttributeManager.cs" />
+    <Compile Include="Reflection\TypeEx.cs" />
+    <Compile Include="Reflection\TypeFactory.cs" />
+    <Compile Include="Reflection\TypeRegistry.cs" />
+    <Compile Include="Reflection\Types.cs" />
+    <Compile Include="Resources\DisplayDescriptionAttribute.cs" />
+    <Compile Include="Resources\DisplayNamePluralAttribute.cs" />
+    <Compile Include="Resources\DisplayNameSingularAttribute.cs" />
+    <Compile Include="Resources\ResourceAttribute.cs" />
+    <Compile Include="Resources\TextResourceAttribute.cs" />
+    <Compile Include="Rules\BlackAndWhiteList.cs" />
+    <Compile Include="Rules\ConditionEx.cs" />
+    <Compile Include="Rules\IBlackAndWhiteList.cs" />
+    <Compile Include="Rules\ICondition.cs" />
+    <Compile Include="Serialization\BasicItemsAdderProvider.cs" />
+    <Compile Include="Serialization\BasicInstantiatorProvider.cs" />
+    <Compile Include="Serialization\BasicPropertySetterProvider.cs" />
+    <Compile Include="Serialization\BasicXmlNameProvider.cs" />
+    <Compile Include="Serialization\ByPropertiesSerializationStrategy.cs" />
+    <Compile Include="Serialization\BytesWritingScheme.cs" />
+    <Compile Include="Serialization\BytesReadingScheme.cs" />
+    <Compile Include="Serialization\BytesSerializationStrategy.cs" />
+    <Compile Include="Serialization\Constants.cs" />
+    <Compile Include="Serialization\Constraints.cs" />
+    <Compile Include="Serialization\ConvertToStringReadingScheme.cs" />
+    <Compile Include="Serialization\ConvertToStringSerializationStrategy.cs" />
+    <Compile Include="Serialization\Exceptions\CannotCreateItemsAdderException.cs" />
+    <Compile Include="Serialization\Exceptions\DeserializationException.cs" />
+    <Compile Include="Serialization\Deserializer.cs" />
+    <Compile Include="Serialization\Exceptions\InvalidSchemeException.cs" />
+    <Compile Include="Serialization\Exceptions\InvalidIdException.cs" />
+    <Compile Include="Serialization\Exceptions\MissingRequiredAttributeException.cs" />
+    <Compile Include="Serialization\Exceptions\NotAllowedLocalTagException.cs" />
+    <Compile Include="Serialization\Exceptions\NoWayForSettingPropertyException.cs" />
+    <Compile Include="Serialization\Exceptions\ObjectIdNotUniqueException.cs" />
+    <Compile Include="Serialization\Exceptions\ReadingSchemeException.cs" />
+    <Compile Include="Serialization\Exceptions\SchemeFixupException.cs" />
+    <Compile Include="Serialization\Exceptions\UnexpectedNamespaceException.cs" />
+    <Compile Include="Serialization\Exceptions\UnexpectedRootNameException.cs" />
+    <Compile Include="Serialization\Exceptions\UnexpectedRootNamespaceException.cs" />
+    <Compile Include="Serialization\Exceptions\UnexpectedTagException.cs" />
+    <Compile Include="Serialization\Exceptions\UnexpectedXmlNodeException.cs" />
+    <Compile Include="Serialization\Exceptions\UnexpectedInfrastructureTagException.cs" />
+    <Compile Include="Serialization\FieldWriter.cs" />
+    <Compile Include="Serialization\IItemsAdderProvider.cs" />
+    <Compile Include="Serialization\IDeserializer.cs" />
+    <Compile Include="Serialization\IdProvider.cs" />
+    <Compile Include="Serialization\IIdProvider.cs" />
+    <Compile Include="Serialization\IInstantiatorProvider.cs" />
+    <Compile Include="Serialization\IPropertyReader.cs" />
+    <Compile Include="Serialization\IPropertySetterProvider.cs" />
+    <Compile Include="Serialization\IPropertyWriter.cs" />
+    <Compile Include="Serialization\IReadingWritingScheme.cs" />
+    <Compile Include="Serialization\IScheme.cs" />
+    <Compile Include="Serialization\ISerializationStrategy.cs" />
+    <Compile Include="Serialization\IWritingScheme.cs" />
+    <Compile Include="Serialization\ISchemeProvider.cs" />
+    <Compile Include="Serialization\ISerializer.cs" />
+    <Compile Include="Serialization\IXmlNameProvider.cs" />
+    <Compile Include="Serialization\Metascheme.cs" />
+    <Compile Include="Serialization\NullWritingScheme.cs" />
+    <Compile Include="Serialization\PropertyReader.cs" />
+    <Compile Include="Serialization\PropertyWriter.cs" />
+    <Compile Include="Serialization\PropertyWriterBase.cs" />
+    <Compile Include="Serialization\ReadingScheme.cs" />
+    <Compile Include="Serialization\Scheme.cs" />
+    <Compile Include="Serialization\SerializationHelpers.cs" />
+    <Compile Include="Serialization\Serializer.cs" />
+    <Compile Include="Serialization\StringReadingScheme.cs" />
+    <Compile Include="Serialization\StringSerializationStrategy.cs" />
+    <Compile Include="Serialization\TypeReadingScheme.cs" />
+    <Compile Include="Serialization\TypeSerializationStrategy.cs" />
+    <Compile Include="Serialization\Exceptions\UknownStrategyException.cs" />
+    <Compile Include="Serialization\WritingScheme.cs" />
+    <Compile Include="Serialization\StandardSchemeProvider.cs" />
+    <Compile Include="Serialization\TypeWritingScheme.cs" />
+    <Compile Include="Serialization\XmlSerialization.cs" />
+    <Compile Include="Spring\AllImplementors.cs" />
+    <Compile Include="Spring\Context.cs" />
+    <Compile Include="StringEx.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>

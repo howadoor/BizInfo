@@ -1,0 +1,11 @@
+﻿<div id="dbStatus">
+    &nbsp;<br />&nbsp;
+</div>
+<script>
+    function loadDbStatus() {
+        $('#dbStatus').load("@VirtualPathUtility.ToAbsolute("~/Base/BriefStatus")");
+    }
+
+    self.setInterval("loadDbStatus()", 60000);
+    loadDbStatus();
+</script>

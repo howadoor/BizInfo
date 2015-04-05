@@ -1,0 +1,76 @@
+﻿@using BizInfo.WebApp.MVC3.Models.Base
+@using BizInfo.WebApp.MVC3.Tools
+@model BizInfo.Model.Entities.SearchingCriteriaModel
+<div id="tabs">
+    <ul>
+        <li><a href="#tabs-1">Základní vlastnosti</a></li>
+        <li><a href="#tabs-2">Rozšířené</a></li>
+    </ul>
+    <div id="tabs-1">
+        <span class="field-name">Vyhledávaná slova</span>
+        @Html.TextBoxFor(m => m.Phrase)
+        <span class="field-name">Zakázaná slova</span>
+        @Html.TextBoxFor(m => m.NotAllowedPhrase)
+        <!--<span class="field-description">Můžete použít spojek AND, OR, závorek, hvězdiček a uvozovek k přesnější specifikaci dotazu (jako na Googlu). Brn* najde "Brno", "Brně" i "Brněnský".</span>--><br />
+        <span class="field-name">Stáří informace</span>
+        @Html.DropDownList("MaxAge", Model.GetMaxAgeSelectList())</br> <span class="field-name">Kontakty</span>
+        @Html.DropDownList("HasContact", Model.GetHasContactSelectList())
+        <span class="field-description">Kontakt znamená telefonní číslo, mailovou adresu, Skype
+            jméno nebo ICQ číslo.</span><br />
+        <span class="field-name">Původ inzerátu</span>
+        @Html.DropDownList("Company", Model.GetCompanySelectList())
+        Osoby&nbsp;&nbsp;&nbsp;
+        <div id="companySlider" style="display: inline-block; width: 250px; position: relative; top: 3px; margin: 0 0 0 0;">
+        </div>
+        &nbsp;&nbsp;&nbsp;Firmy
+        <input type="text" id="companyLimit" name="CompanyLimit" value="@Model.CompanyLimit" style="border: none; width: 30px; margin: 0 0 0 0; background: transparent; text-align: right" />
+        %<br />
+        <span class="field-name">Důležitost</span>
+        @Html.DropDownList("Important", Model.GetImportancySelectList())
+        <span class="field-description">K označení důležité informace klikněte na obrázek výstražného
+            trojúhelníku vedle nadpisu.</span><br />
+        <span class="field-name">Zobrazení</span>
+        @Html.DropDownList("KindOfView", Model.GetKindOfViewSelectList())<br />
+    </div>
+    <div id="tabs-2">
+        <table>
+            <tr>
+                <td>
+                    <p>
+                        Zdroj</p>
+                    @Html.CheckBoxList("Sources", Model.GetSourcesSelectListItems())
+                </td>
+                <td>
+                    <p>
+                        Typ informace</p>
+                    @Html.CheckBoxList("VerbKinds", Model.GetVerbKindsSelectListItems())
+                </td>
+                <td>
+                    <p>
+                        Činnost</p>
+                    @Html.CheckBoxList("Verbs", Model.GetVerbsSelectListItems())
+                </td>
+                <td>
+                    <p>
+                        Obor</p>
+                    @Html.CheckBoxList("Domains", Model.GetDomainsSelectListItems())
+                </td>
+            </tr>
+        </table>
+    </div>
+    <script>
+        $(function() {
+            $("#companySlider").slider({
+                value: @Model.CompanyLimit,
+	            min: 0,
+	            max: 100,
+	            slide: function (event, ui) {
+	                $("#companyLimit").val(ui.value);
+	            }
+            });
+        });
+        $(function() {
+            $("#tabs").tabs();
+        });
+    </script>
+</div>

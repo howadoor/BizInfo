@@ -1,0 +1,716 @@
+﻿/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+a:link {
+    color: #034af3;
+    text-decoration: underline;
+}
+
+a:visited {
+    color: #505abc;
+}
+
+a:hover {
+    color: #1d60ff;
+    text-decoration: none;
+}
+
+a:active {
+    color: #12eb87;
+}
+
+header,
+footer,
+nav,
+section {
+    display: block;
+}
+
+/* HEADINGS   
+----------------------------------------------------------*/
+h1, h2, h3, h4, h5, h6 {
+    font-size: 1.5em;
+    color: #000;
+}
+
+h1 {
+    font-size: 2em;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+
+h2 {
+    padding: 0 0 10px 0;
+}
+
+h3 {
+    font-size: 1.2em;
+}
+
+h4 {
+    font-size: 1.1em;
+}
+
+h5, h6 {
+    font-size: 1em;
+}
+
+/* PRIMARY LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+/* you can specify a greater or lesser percentage for the 
+page width. Or, you can specify an exact pixel width. */
+.page {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    min-width: 950px;
+    max-width: 1300px;
+}
+
+header, #header {
+    margin-bottom: 0px;
+    color: #000;
+    padding: 0;
+}
+
+header h1, #header h1 {
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color:  #ba7b00;
+    border: none;
+    line-height: 100%;
+    font-size: 48px !important;
+    text-shadow: 1px 1px 2px #111;
+}
+
+header h2, #header h2 {
+    font-weight: bold;
+    padding: 5px 0;
+    margin: 0;
+    color:  #ba7b00;
+    border: none;
+    line-height: 100%;
+    font-size: 16px !important;
+    text-shadow: 1px 1px 2px #111;
+}
+
+#main {
+    padding: none;
+    background-color: #fff;
+    border-radius: 4px 0 4px 4px;
+    -webkit-border-radius: 4px 0 4px 4px;
+    -moz-border-radius: 4px 0 4px 4px;
+}
+
+footer, 
+#footer {
+    background-color: #fff;
+    color: #999;
+    padding: 10px 0;
+    text-align: center;
+    line-height: normal;
+    margin: 30 0 0px 0;
+    font-size: .9em;
+    border-radius: 0 0 4px 4px;
+    -webkit-border-radius: 0 0 4px 4px;
+    -moz-border-radius: 0 0 4px 4px;
+}
+
+/* TAB MENU   
+----------------------------------------------------------*/
+ul#menu {
+    border-bottom: 1px #5C87B2 solid;
+    padding: 0 0 2px;
+    position: relative;
+    margin: 0;
+    text-align: right;
+}
+
+ul#menu li {
+    display: inline;
+    list-style: none;
+}
+
+ul#menu li#greeting {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    color: #fff;
+}
+
+ul#menu li a {
+    padding: 10px 20px;
+    font-weight: bold;
+    text-decoration: none;
+    line-height: 2.8em;
+    background-color: #e8eef4;
+    color: #034af3;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+    -moz-border-radius: 4px 4px 0 0;
+}
+
+ul#menu li a:hover {
+    background-color: #fff;
+    text-decoration: none;
+}
+
+ul#menu li a:active {
+    background-color: #a6e2a6;
+    text-decoration: none;
+}
+
+ul#menu li.selected a {
+    background-color: #fff;
+    color: #000;
+}
+
+/* FORM LAYOUT ELEMENTS   
+----------------------------------------------------------*/
+
+form
+{
+	border: none;
+	padding: none;
+	margin: none;
+}
+
+legend {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+textarea {
+    min-height: 75px;
+}
+
+input[type="text"], 
+input[type="password"] {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    width: 200px;
+    margin-right: 2em;
+}
+
+select {
+    border: 1px solid #ccc;
+    padding: 2px;
+    font-size: 1.2em;
+    color: #444;
+    min-width: 150px;
+    margin-right: 2em;
+}
+
+input[type="submit"], a#store {
+    float: right;
+    margin: 8px;
+}
+
+a#store {
+    padding: 2px;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th {
+    padding: 6px 5px;
+    text-align: left;
+    background-color: #e8eef4;
+    border: solid 1px #e8eef4;
+}
+
+/* MISC  
+----------------------------------------------------------*/
+.clear {
+    clear: both;
+}
+
+.error {
+    color: Red;
+}
+
+nav, 
+#menucontainer {
+    margin-top: 40px;
+}
+
+div#title {
+    display: block;
+    float: left;
+    text-align: left;
+}
+
+#title-tools {
+    font-size: 1.1em;
+    display: block;
+    text-align: right;
+    margin: 8px;
+    color: White;
+}
+
+#title-tools a:link {
+    color: white;
+    text-decoration: underline;
+}
+
+#title-tools a:visited {
+    color: white;
+    text-decoration: underline;
+}
+
+#title-tools a:hover {
+    color: white;
+    text-decoration: none;
+}
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error {
+    color: #ff0000;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+.input-validation-error {
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+/* Styles for editor and display helpers
+----------------------------------------------------------*/
+.display-label, 
+.editor-label {
+    margin: 1em 0 0 0;
+}
+
+.display-field, 
+.editor-field {
+    margin: 0.5em 0 0 0;
+}
+
+.text-box {
+    width: 30em;
+}
+
+.text-box.multi-line {
+    height: 6.5em;
+}
+
+.tri-state {
+    width: 6em;
+}
+
+/* CUSTOM  
+----------------------------------------------------------*/
+
+#app-title
+{
+	float: left;
+	text-align: left;
+	width: 50%;
+	margin-bottom: 0px;
+}
+
+.header #app-title h1, #app-title h2, #app-title .description
+{
+	margin: 0;
+	padding: 0;
+	border: 0;
+	clear: none;
+	line-height: 120%;
+}
+
+#app-title h1
+{
+	color: Orange;
+	font-size: 48px;
+}
+
+#app-title .description
+{
+	color: Black;
+	margin-top: 8px;
+	font-style: italic;
+}
+
+#app-logo
+{
+	float: left;
+	margin-right: 16px;
+}
+
+.pager
+{
+	float: right;
+	margin: 0;
+	padding: 0;
+	width:auto;
+}
+
+.bizinfo .tools
+{
+	float: right;
+	display: block;
+	font-size: 90%;
+	margin-top: 0px;
+	padding-left: 16px;
+	text-align:right;
+}
+
+.bizinfo h2
+{
+    border-bottom: 1px solid #E0E0E0;
+    color: #BA7B00;
+    font-family: Calibri,Arial,Sans-Serif;
+    font-size: 1.5em;
+    line-height: 85%;
+    margin-bottom: 0;
+    padding: 3px 0 0;
+}
+
+.bizinfo .more
+{
+	font-family: Calibri, Arial, Sans-Serif;
+	font-weight: bold;
+	font-size: 90%;
+	color: #404040;
+}
+
+.bizinfo
+{
+	margin-bottom: 8px;
+	color: #202020;
+	clear: both;
+}
+
+.info-view .navigation
+{
+	background-color: #f0f0f0;
+	margin-bottom: 8px;
+	color: Black;
+	padding: 8px;
+}
+
+.records-count
+{
+	font-weight: bold;
+}
+
+.item .phone, .item .mail
+{
+	font-weight: bold;
+}
+
+.google-icon
+{
+	width: 16px;
+	height: 16px;
+	margin-left: 0.3em;
+	margin-right: 0.3em;
+}
+
+.field-description
+{
+	color: #404040;
+	font-size: 80%;
+	font-style:italic;
+}
+
+#search-conditions
+{
+	border-bottom: 1px solid black;
+	padding-bottom: 4px;
+	margin-bottom: 8px;
+}
+
+.search-button
+{
+	float:right;
+}
+
+.bizinfo .icon
+{
+	float: left;
+	border: 1px solid #d0d0d0;
+	margin-right: 16px;
+	margin-bottom: 16px;
+	width: 200px;
+	min-height: 120px;
+	background-color: #f0f0f0;
+}
+
+/* PAGING CONTROL */
+
+.PagingContainer
+{
+	/*border-top: 1px solid #C2C2C2;*/
+}
+.PagingContainer, .PagingContainer input, .PagingContainer select
+{
+	/*font-family: Verdana;*/
+	font-size: 8pt;
+}
+.PagingIcon, .PagingFirst, .PagingPrevious, .PagingNext, .PagingLast
+{
+	height: 16px;
+	width: 16px;
+	border-style: none;
+	cursor: pointer;
+}
+.PagingFirst
+{
+	background-image: url('../Images/PagingFirst.png');
+	margin-left: 24px;
+}
+.PagingPrevious
+{
+	background-image: url('../Images/PagingPrevious.png');
+}
+.PagingNext
+{
+	background-image: url('../Images/PagingNext.png');
+}
+.PagingLast
+{
+	background-image: url('../Images/PagingLast.png');
+	margin-right: 24px;
+}
+.CurrentPage
+{
+	text-align: center;
+}
+.PagingNavigation td
+{
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.PagingRecords td
+{
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.PagingShowingRecord
+{
+	padding-left: 2px;
+	padding-right: 2px;
+}
+.searching-criteria 
+{
+	border-bottom: 1px solid gray;
+}
+.tab-form
+{
+	font-size: 80%;
+}
+.searching-form
+{
+	background-color: #f0f0f0;
+	margin-bottom: 16px;
+	padding: none;
+}
+.bizinfo .text
+{
+    line-height: 120%;
+    margin-top: 6px;
+}
+.pagination
+{
+    clear: both;
+    font-weight: bold;
+}
+.paging
+{
+	float: right;
+	width: 50%;
+	text-align: right;
+}
+.bizinfo-list
+{
+	margin-top: 12px;
+	margin-bottom: 12px;
+}
+.text em
+{
+    background: none repeat scroll 0 0 #FFFFC0;
+    font-weight: bold;
+    padding: 0 4px;
+}
+.inplace-search-icon
+{
+	width: 16px;
+	height: 16px;
+	position: relative;
+	top: 2px;
+}
+
+.searching-form table {
+	padding: none;
+	margin: none;
+	margin-bottom: 1em;
+	border-width: 0px;
+	border-spacing: 0px;
+	border-style: none;
+	border-collapse: collapse;
+}
+
+.searching-form table th {
+	border-width: 0px;
+	padding: 0px;
+	border-style: none;
+}
+.searching-form table td {
+	border-width: 0px;
+	padding: 0px;
+	padding-right: 16px;
+	border-style: none;
+	vertical-align: top;
+	width: 180px;
+}
+.searching-form table p {
+	margin-top: 0px;
+	margin-bottom: 4px;
+}
+.field-name
+{
+	width: 140px;
+	display: inline-block;
+}
+.bizinfo .photos
+{
+	float: left;
+	margin-right: 16px;
+}
+.bizinfo .photos img
+{
+	display:block;
+	width: 200px;
+	border: 1px solid #d0d0d0;
+	margin: 2px;
+	background-color: #f0f0f0;
+}
+.bizinfo .structured
+{
+	margin-top: 16px;
+}
+.bizinfo .structured table
+{
+	margin-top: 16px;
+	border: none;
+}
+.bizinfo .structured table td {
+    padding: 0 0 4px 0;
+    border: none;
+}
+.bizinfo .structured table th {
+    padding: 0;
+    text-align: left;
+    background-color: transparent;
+    border: none;
+    padding: 0 16px 4px 0;
+}
+#dbStatus
+{
+	margin-top: 4px;
+}
+.section
+{
+	padding: 8px 24px 8px 24px;
+	clear: both;
+}
+.searching-form #Phrase, .searching-form #NotAllowedPhrase
+{
+	width: 700px;
+}
+.note-edit-form
+{
+	padding: none;
+	margin: none;
+	font-size: 90%;
+    margin-bottom: 48px;
+    margin-top: 8px;
+}
+.note-edit-form input[type="submit"]
+{
+	padding: 0 8px;
+	font-weight: bold;
+	margin: 0;
+	float: right;
+	font-size: 90%;
+}
+.note-edit-form textarea
+{
+    background-color: #FFFFF0;
+    border: 1px solid #F0F0F0;
+    font-family: "Calibri","Arial","Helvetica","Verdana","sans-serif";
+    font-size: 100%;
+    font-weight: bold;
+    min-height: 30px;
+    padding: 4px;
+    width: 430px;
+}
+.invisible
+{
+	display:none;
+}
+.visible
+{
+	display:block;
+}
+.column
+{
+	width: 440px;
+	float: left;
+}
+.column-0
+{
+	padding-right: 12px;
+	margin-right: 12px;
+	border-right: 1px solid #f0f0f0;
+}
+.column .bizinfo .tools img
+{
+	width: 20px;
+}
+#db-search-in-progress
+{
+	margin: 8px;
+	font-weight: bold;
+	text-align: center;
+}
+.brief-icon
+{
+	float: right;
+	width: 150px;
+	margin-left: 8px;
+	margin-bottom: 8px;
+	border: 1px solid #f0f0f0;
+}

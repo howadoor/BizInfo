@@ -1,0 +1,32 @@
+﻿@using BizInfo.Harvesting.Services.Processing.Fragments
+@using BizInfo.Model.Entities
+@model BizInfo.WebApp.MVC3.Models.Base.BizInfoModel
+
+<div class="bizinfo">
+    <a href="@VirtualPathUtility.ToAbsolute(Model.DetailUrl)" title="Detailní zobrazení" target="_blank">
+        <img class="icon" src="@Model.BizInfo.PhotoUrlsList.FirstOrDefault()" alt="@Model.BizInfo.Summary" />
+    </a>
+    @Html.Partial("BizInfoToolsView", Model)
+    <a class="title" href="@VirtualPathUtility.ToAbsolute(Model.DetailUrl)" title="Detailní zobrazení" target="_blank"><h2 class="summary">@Model.BizInfo.Summary</h2>
+        <div class="more">
+            @if (Model.BizInfo.StructuredContentDocument != null && !string.IsNullOrEmpty(Model.BizInfo.StructuredContentDocument.Price))
+            {
+                <span class="creation-time" style="color: Green">@Model.BizInfo.StructuredContentDocument.Price</span>
+                <text>&bull;</text>
+            }
+            <span class="creation-time">@Model.BizInfo.CreationTime</span>
+            &bull;
+            @if (Model.Category != null)
+            {
+                <span class="category">@Model.Container.GetCategoryFullName(Model.Category, " > ")</span>
+                <text>&bull;</text>
+            }
+            <span style="font-weight: normal;">
+                <span class="creation-time">@((int) (Model.BizInfo.IsCompanyScore*100 + 0.5))</span>
+                % &bull;
+                @Model.BizInfo.Id
+            </span>
+        </div>
+    </a>
+    <div class="text">@MvcHtmlString.Create(TextProcessingTools.Processor.Process(Model.BizInfo.Text))</div>
+</div>

@@ -1,0 +1,56 @@
+body
+    {
+	font-size: 62.5%; /* Resets 1em to 10px */
+	font-size: 10pt; /* Resets 1em to 10px */
+	font-family: Cambria, Constantia, Georgia, 'Times New Roman', Serif;
+	background-color: white;
+	color: black;
+	text-align: justify;
+	margin: 0;
+	padding: 16px 16px 16px 16px;
+	}
+p
+	{
+	margin: 9px 0 9px 0;
+	}
+h1, h2, h3, .more
+	{
+	font-weight: bold;
+	margin: 0 0 0 0;
+	border: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 100%;
+	}
+
+h1 
+	{
+	font-size: 1.6em;
+	}
+h2 
+	{
+	font-size: 1.5em;
+	}
+.more 
+	{
+	margin-top: 4px;
+	font-size: 0.9em;
+	}
+.info
+	{
+	margin: 4px 0 4px 0;
+	padding: 4px;
+	}	
+.odd
+	{
+	background-color: #f4f4f0;
+	}	
+a
+    {
+	text-decoration: none;
+	color: #0000d0;
+	}
+a:hover
+    {
+	color: #4040ff;
+	text-decoration: underline;
+	}

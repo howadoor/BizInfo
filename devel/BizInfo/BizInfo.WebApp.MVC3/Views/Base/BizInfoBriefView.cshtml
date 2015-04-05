@@ -1,0 +1,38 @@
+﻿@using BizInfo.WebApp.MVC3.Tools
+@model BizInfo.WebApp.MVC3.Models.Base.BizInfoModel
+<div class="bizinfo">
+    @Html.Partial("BizInfoToolsView", Model)
+    <a class="title" href="@VirtualPathUtility.ToAbsolute(Model.DetailUrl)" title="Detailní zobrazení" target="_blank">
+        <h2 class="summary">@Model.BizInfo.Summary</h2>
+    </a>
+    <div class="more">
+        @if (Model.BizInfo.StructuredContentDocument != null && !string.IsNullOrEmpty(Model.BizInfo.StructuredContentDocument.Price))
+        {
+            <span class="creation-time" style="color: Green">@Model.BizInfo.StructuredContentDocument.Price</span>
+            <text>&bull;</text>
+        }
+        <span class="creation-time">@Model.BizInfo.CreationTime</span> <span style="font-weight: normal;">
+                                                                           &bull; <span class="creation-time">@((int) (Model.BizInfo.IsCompanyScore*100 + 0.5))
+                                                                                      %</span> </span>
+    </div>
+    @{
+        var photoUrl = Model.BizInfo.PhotoUrlsList.FirstOrDefault();
+        if (!string.IsNullOrEmpty(photoUrl))
+        {
+            <a href="@VirtualPathUtility.ToAbsolute(Model.DetailUrl)" title="Detailní zobrazení" target="_blank">
+                <img class="brief-icon" src="@photoUrl" alt="@Model.BizInfo.Summary" />
+            </a>
+        }
+    }
+    <div class="text">@Html.ProcessText(Model.BizInfo.Text, 512)</div>
+    @{
+        var noteEditorId = string.Format("note-editor-{0}", Model.BizInfo.Id);
+        var noteIconId = string.Format("note-icon-{0}", Model.BizInfo.Id);
+        var noteEditorInitialClass = Model.HasNoteOfCurrentUser ? null : "invisible";
+        var noteEditorTogglingClass = Model.HasNoteOfCurrentUser ? "invisible" : "visible";
+        <div id="@noteEditorId" class="@noteEditorInitialClass note-edit-form">
+            @Html.Partial("NoteEditorView", Model)
+        </div>
+    }
+    <div class="clear"></div>
+</div>

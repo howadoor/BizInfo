@@ -1,0 +1,22 @@
+﻿@model BizInfo.WebApp.MVC3.Models.Base.BizInfoModel
+
+@{
+    var loadingElementId = string.Format("note-stored-{0}", Model.BizInfo.Id);
+    var updateTargetId = string.Format("note-stored-target-{0}", Model.BizInfo.Id);
+    using (Ajax.BeginForm("EditNote", new AjaxOptions {HttpMethod = "Get", UpdateTargetId = updateTargetId, LoadingElementDuration = 5000, LoadingElementId = loadingElementId}))
+    {
+        <input type="hidden" id="infoId" name="infoId" value="@Model.BizInfo.Id" />
+        <textarea rows="3" cols="160" id="note" name="note">@Model.NoteOfCurrentUser</textarea>
+        <div id="@updateTargetId"></div>
+        <div id="@loadingElementId" style="display: none; color: Blue; font-weight: bold">
+            Ukládám poznámku
+        </div>
+        <input class="edit-note-submit" type="submit" value="Uložit" />
+        <script>
+            $(function() {
+                $("input:submit", ".note-edit-form").button();
+            });
+        </script>
+    }
+}
+
